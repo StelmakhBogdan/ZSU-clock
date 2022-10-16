@@ -10,9 +10,10 @@ import {
 } from 'react-native';
 
 const  HomeScreen = () => {
+  console.log('IM HERE');
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f444fe' }}>
+      <Text style={{color: '#000'}}>Home Screen</Text>
     </View>
   );
 }

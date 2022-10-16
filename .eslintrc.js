@@ -5,6 +5,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
+        extensions: ['.js', '.jsx', '.json', '.native.js'],
         paths: ['src'],
         alias: {
           _assets: './src/assets',

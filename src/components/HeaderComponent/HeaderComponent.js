@@ -1,8 +1,14 @@
 import React from 'react';
 import {
   Text,
-  Header,
 } from 'react-native';
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
 
 const HeaderComponent = () => {
   return (
