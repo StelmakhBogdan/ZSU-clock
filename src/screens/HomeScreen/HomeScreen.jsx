@@ -1,37 +1,49 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
+  TextInput,
   useColorScheme,
-  View,
   Button,
 } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import { CLOCK } from '../../shared/constants/pathNames';
 
 const  HomeScreen = ({ navigation }) => {
+  const [text, setText] = React.useState('');
   const isDarkMode = useColorScheme() === 'dark';
   const navigateToWatch = () => {
      navigation.navigate(CLOCK)
   }
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  console.log(text);
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f444fe' }}>
-      <Text style={{color: '#000'}}>Home Screen</Text>
+    <SafeAreaView>
+      <TextInput
+          style={styles.input}
+          onChangeText={setText}
+          value={text}
+          maxLength={30}
+      />
       <Button
         title="Ok"
         onPress={navigateToWatch}
       />
-    </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    fontSize: 20,
+    color: '#000',
+    alignItems: 'stretch',
+  },
+});
 
 export default HomeScreen
