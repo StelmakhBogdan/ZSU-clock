@@ -1,49 +1,52 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  TextInput,
-  useColorScheme,
-  Button,
-} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { useColorScheme } from 'react-native';
 
 import { CLOCK } from '../../shared/constants/pathNames';
+import { localStorage } from '../../shared/helpers/localStorage';
+
+import { SStatusBar, SSafeAreaView, STextInput , SImageBackground , SButton, SText } from './style';
 
 const  HomeScreen = ({ navigation }) => {
-  const [text, setText] = React.useState('');
+  const [text, setText] = useState('');
+
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    localStorage().getItem('title').then((data) => {
+      if (data) {
+        setText(JSON.parse(data));
+      }
+    });
+  }, []);
+
   const navigateToWatch = () => {
-     navigation.navigate(CLOCK)
+    localStorage().setItem('title', text).then(() => {
+      navigation.navigate(CLOCK)
+    })
   }
 
-  console.log(text);
 
   return (
-    <SafeAreaView>
-      <TextInput
-          style={styles.input}
-          onChangeText={setText}
-          value={text}
-          maxLength={30}
-      />
-      <Button
-        title="Ok"
-        onPress={navigateToWatch}
-      />
-    </SafeAreaView>
+    <>
+      <SStatusBar />
+      <SSafeAreaView>
+        <STextInput
+            onChangeText={setText}
+            value={text}
+            maxLength={30}
+        />
+
+        <SImageBackground
+          source={{uri: 'https://i.pinimg.com/originals/25/c5/09/25c5094cc43fa9e1bec0b83b296831c3.gif'}}
+          resizeMode="cover"
+        >
+          <SButton onPress={navigateToWatch} >
+            <SText>OK</SText>
+          </SButton>
+        </SImageBackground>
+      </SSafeAreaView>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    fontSize: 20,
-    color: '#000',
-    alignItems: 'stretch',
-  },
-});
 
 export default HomeScreen
