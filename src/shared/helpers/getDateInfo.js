@@ -5,10 +5,10 @@ export const getDateInfo = () => {
   const day = date.getUTCDate();
   const year = date.getUTCFullYear();
   const hours = date.getHours();
-  const  ampm = hours >= 12 ? '2' : '1';
+  const  ampm = hours >= 12 ? 'II' : 'I';
 
 
-  const dateInfo = `${day}.${month}.${year} | ${ampm}`
+  const dateInfo = `${day}.${month}.${year}  ${ampm}`
 
   return { dateInfo }
 };

@@ -12,10 +12,16 @@
 
 export const lightTheme = {
   style: "light",
-  bgColor: "#6B8E23",
-  primaryColor: "#333",
-  secondaryColor: "#555",
-  accentColor: "#4a5aef",
+  bgColor: "#28471a",
+  // primaryColor: "#333",
+  primaryColor: "#fff",
+  // secondaryColor: "#555",
+  secondaryColor: "#CACACA",
+  // accentColor: "#4a5aef",
+  accentColor: "#ff1100",
+  btnColor: "#fff",
+  btnBgColor: "#59e21c",
+  inputColor: "#fff",
 };
 
 export const darkTheme = {
@@ -24,4 +30,7 @@ export const darkTheme = {
   primaryColor: "#fff",
   secondaryColor: "#CACACA",
   accentColor: "#4aefd5",
+  btnColor: "#111",
+  btnBgColor: "#fff",
+  inputColor: "#fff",
 };
