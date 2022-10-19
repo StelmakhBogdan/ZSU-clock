@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useColorScheme } from 'react-native';
 
 import { CLOCK } from '../../shared/constants/pathNames';
 import { localStorage } from '../../shared/helpers/localStorage';
@@ -8,8 +7,6 @@ import { SStatusBar, SSafeAreaView, STextInput , SImageBackground , SButton, STe
 
 const  HomeScreen = ({ navigation }) => {
   const [text, setText] = useState('');
-
-  const isDarkMode = useColorScheme() === 'dark';
 
   useEffect(() => {
     localStorage().getItem('title').then((data) => {
@@ -37,6 +34,7 @@ const  HomeScreen = ({ navigation }) => {
         />
 
         <SImageBackground
+          // source={{uri: 'https://thumbs.gfycat.com/NastySlipperyAustralianfurseal-size_restricted.gif'}}
           source={{uri: 'https://i.pinimg.com/originals/25/c5/09/25c5094cc43fa9e1bec0b83b296831c3.gif'}}
           resizeMode="cover"
         >
