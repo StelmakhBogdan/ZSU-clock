@@ -19,6 +19,7 @@ const RootNavigator = () =>{
           name="Home"
           component={HomeScreen}
           options={{
+            title: '',
             headerStyle: { backgroundColor: isDarkMode ? darkTheme.bgColor: lightTheme.bgColor }
           }}
         />

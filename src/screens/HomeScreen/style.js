@@ -10,12 +10,13 @@ export const SStatusBar = styled.StatusBar.attrs(({ theme }) => ({
 }))``;
 
 export const STextInput = styled.TextInput`
-  height: 40px;
+  height: 50px;
   margin: 12px;
   border-width: 1px;
-  padding: 10px;
+  padding: 5px 10px;
   font-size: 20px;
-  color: #000;
+  border-color: ${({ theme }) => theme.inputColor};
+  color: ${({ theme }) => theme.inputColor};
   align-items: stretch;
 `;
 
@@ -28,7 +29,7 @@ export const SImageBackground = styled.ImageBackground`
 export const SButton = styled.TouchableOpacity`
   margin-bottom: 20px;
   padding: 4px;
-  border-color: #ffffff;
+  border-color: ${({ theme }) => theme.btnBgColor};
   border-radius: 4px;
   border-width: 1px;
   width: 80px;
@@ -36,9 +37,9 @@ export const SButton = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color:${({ theme }) => theme.btnBgColor};
 `;
 
 export const SText = styled.Text`
-  color: #000;
+  color: ${({ theme }) => theme.btnColor};
 `;
