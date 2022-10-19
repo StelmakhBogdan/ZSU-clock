@@ -24,7 +24,6 @@ const Clock = () => {
   }, 1000);
 
   return (
-
     <Svg height={width} width={width}>
       <ClockMarkings
         minutes={minuteStickCount}
@@ -49,7 +48,7 @@ const Clock = () => {
       <Hours
         angle={time.hours}
         center={center}
-        radius={radius}
+        radius={radius/1.35}
         stroke='white'
         strokeWidth='7'
       />

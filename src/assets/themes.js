@@ -12,7 +12,7 @@
 
 export const lightTheme = {
   style: "light",
-  bgColor: "#28471a",
+  bgColor: "#0f240c",
   // primaryColor: "#333",
   primaryColor: "#fff",
   // secondaryColor: "#555",

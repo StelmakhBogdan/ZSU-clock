@@ -35,7 +35,8 @@ const  HomeScreen = ({ navigation }) => {
 
         <SImageBackground
           // source={{uri: 'https://thumbs.gfycat.com/NastySlipperyAustralianfurseal-size_restricted.gif'}}
-          source={{uri: 'https://i.pinimg.com/originals/25/c5/09/25c5094cc43fa9e1bec0b83b296831c3.gif'}}
+          // source={{uri: 'https://i.pinimg.com/originals/25/c5/09/25c5094cc43fa9e1bec0b83b296831c3.gif'}}
+          source={require('../../assets/gif/radarGif.gif') }
           resizeMode="cover"
         >
           <SButton onPress={navigateToWatch} >
