@@ -1,6 +1,6 @@
 //TODO implementation TS
 export const to12hClock = (hour) => {
-  return hour > 12 ? hour - 12 : hour;
+  return hour >= 12 ? hour - 12 : hour;
 };
 
 // type TimeObject = {
@@ -10,9 +10,9 @@ export const to12hClock = (hour) => {
 // };
 
 export const getTime = () => {
-  const date = new Date();
-  const hours = (to12hClock(date.getHours()) / 12) * 360;
-  const minutes = (date.getMinutes() / 60) * 360;
-  const seconds = (date.getSeconds() / 60) * 360;
+  const date = new Date()
+  const hours = ((date.getHours() % 12) + date.getMinutes() / 60) * 30;
+  const minutes = (date.getMinutes()) * 6;
+  const seconds = (date.getSeconds()) * 6;
   return { hours, minutes, seconds };
 };
